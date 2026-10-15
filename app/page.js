@@ -48,12 +48,12 @@ export default function Home() {
         <Hero />
         <About />
         <Stats />
-        <Clients />
+        {/* <Clients /> */}
         <Works />
         <Services />
-        <Tools />
+        {/* <Tools /> */}
         <Process />
-        <Testimonials />
+        {/* <Testimonials /> */}
         <Faq />
         <Contact />
       </main>

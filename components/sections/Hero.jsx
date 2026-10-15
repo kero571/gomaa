@@ -25,7 +25,6 @@ export default function Hero() {
 
       {/* Hero Content */}
       <div className="container-x relative z-10 flex h-full flex-col justify-end py-5 text-center md:flex-row md:items-center md:justify-between md:gap-10 md:py-8 md:text-start lg:gap-16">
-
         {/* Text */}
         <div className="mx-auto w-full max-w-2xl md:mx-0 md:min-w-0 md:flex-1">
           <span className="chip animate-fadeUp">
@@ -35,8 +34,7 @@ export default function Hero() {
 
           <h1 className="mx-auto mt-3 text-[clamp(1.65rem,6vw,2.35rem)] font-black leading-[1.35] animate-fadeUp [animation-delay:.08s] sm:text-4xl md:mx-0 md:mt-5 md:text-4xl lg:text-5xl xl:text-6xl">
             اصنع فيديوهات تجعل
-            <br />
-            <span className="text-brand">
+            <span className="mt-3 block text-brand sm:mt-4">
               جمهورك يتوقف عن التمرير
             </span>
           </h1>
@@ -46,13 +44,22 @@ export default function Hero() {
             تفاعل حساباتك وصفحاتك.
           </p>
 
-          <a
-            href="#works"
-            className="btn mx-auto mt-5 inline-flex !py-3 backdrop-blur md:mx-0 md:mt-6"
-          >
-            <Icon name="play" className="h-4 w-4" />
-            شاهد أعمالي
-          </a>
+          <div className="mt-5 flex w-full flex-col items-stretch justify-center gap-3 sm:w-auto sm:flex-row sm:items-center md:mt-6 md:justify-start">
+            <a
+              href="#works"
+              className="btn inline-flex w-full items-center justify-center gap-2 !py-3 backdrop-blur sm:w-auto"
+            >
+              <Icon name="play" className="h-4 w-4" />
+              شاهد أعمالي
+            </a>
+
+            <a
+              href="#contact"
+              className="btn inline-flex w-full items-center justify-center gap-2 !py-3 backdrop-blur sm:w-auto"
+            >
+              تواصل معي
+            </a>
+          </div>
         </div>
 
         {/* Desktop Portrait */}

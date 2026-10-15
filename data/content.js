@@ -16,7 +16,7 @@ export const SKILLS = [
 export const STATS = [
   { value: "150+", label: "مشروع مكتمل" },
   { value: "50+", label: "عميل في الوطن العربي" },
-  { value: "4+", label: "سنوات خبرة مستمرة" },
+  { value: "2+", label: "سنوات خبرة مستمرة" },
   { value: "100%", label: "نسبة رضا وولاء" },
 ];
 
@@ -29,46 +29,15 @@ export const FILTERS = [
   { id: "ads", label: "إعلانات تجارية" },
 ];
 
-// Put your files in /public/videos and update `src`
-export const WORKS = [
-  {
-    id: 1,
-    title: "إعلان ترويجي لتطبيق",
-    meta: "موشن جرافيك",
-    views: "800K",
-    duration: "0:30",
-    cat: "ads",
-    src: "/videos/work-1.mp4",
-  },
-  {
-    id: 2,
-    title: "ريلز بودكاست ريادي",
-    meta: "بودكاست",
-    views: "1.2M",
-    duration: "0:45",
-    cat: "podcast",
-    src: "/videos/work-2.mp4",
-    eq: true,
-  },
-  {
-    id: 3,
-    title: "ريلز تجارة إلكترونية",
-    meta: "إعلانات UGC",
-    views: "420K",
-    duration: "0:35",
-    cat: "reels",
-    src: "/videos/work-3.mp4",
-  },
-  {
-    id: 4,
-    title: "وثائقي مصغر (Shorts)",
-    meta: "سرد قصصي",
-    views: "640K",
-    duration: "0:58",
-    cat: "reels",
-    src: "/videos/work-4.mp4",
-  },
-];
+export const WORKS = Array.from({ length: 11 }, (_, index) => {
+  const id = index + 1;
+
+  return {
+    id,
+    src: `/videos/${id}.mp4`,
+    cover: `/covers/${id}.webp`,
+  };
+});
 
 export const SERVICES = [
   {
@@ -152,8 +121,6 @@ export const FAQS = [
 ];
 
 export const SOCIALS = [
-  { icon: "instagram", label: "Instagram", href: "https://instagram.com/" },
-  { icon: "youtube", label: "YouTube", href: "https://youtube.com/" },
-  { icon: "tiktok", label: "TikTok", href: "https://tiktok.com/" },
-  { icon: "behance", label: "Behance", href: "https://behance.net/" },
+  { icon: "instagram", label: "Instagram", href: "https://www.instagram.com/edit.gomaa?srtk=NDB6cDl1aTl1eTRs" },
+  { icon: "facebook", label: "facebook", href: "https://www.facebook.com/gomaa.abdeltoub?mibextid=ZbWKwL" },
 ];
