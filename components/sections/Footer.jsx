@@ -13,7 +13,7 @@ export default function Footer() {
           </li>
         ))}
       </ul>
-      <p className="text-[11px] text-white/45">جميع الحقوق محفوظة © 2026 محمد أحمد للمونتاج والموشن جرافيك.</p>
+      <p className="text-[11px] text-white/45">جميع الحقوق محفوظة © 2026 جمعة للمونتاج والموشن جرافيك.</p>
     </footer>
   );
 }
