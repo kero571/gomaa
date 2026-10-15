@@ -1,6 +1,6 @@
 import Icon from "../ui/Icon";
 
-const WHATSAPP_NUMBER = "9665XXXXXXXX";
+const WHATSAPP_NUMBER = "201159150080";
 
 const SOCIAL_LINKS = [
   {
