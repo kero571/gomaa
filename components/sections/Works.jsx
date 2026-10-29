@@ -9,8 +9,16 @@ export default function Works({ works, link, heading }) {
   const [activeId, setActiveId] = useState(null);
 
   return (
-    <section id="works" aria-labelledby="works-title" className="section container-x defer">
-      <SectionHeading id="works-title" eyebrow={heading.eyebrow} title={heading.title} />
+    <section
+      id="works"
+      aria-labelledby="works-title"
+      className="section container-x defer"
+    >
+      <SectionHeading
+        id="works-title"
+        eyebrow={heading.eyebrow}
+        title={heading.title}
+      />
 
       <ul className="mx-auto grid max-w-5xl grid-cols-1 gap-3 md:grid-cols-3 lg:grid-cols-4">
         {(works || []).map((work, index) => {
@@ -25,6 +33,9 @@ export default function Works({ works, link, heading }) {
                       src={work.src}
                       poster={work.cover || undefined}
                       controls
+                      controlsList="nodownload"
+                      disablePictureInPicture
+                      onContextMenu={(e) => e.preventDefault()}
                       autoPlay
                       playsInline
                       preload="metadata"
@@ -70,9 +81,15 @@ export default function Works({ works, link, heading }) {
             rel="noopener noreferrer"
             className="group inline-flex w-full max-w-xs items-center justify-center gap-3 rounded-full border border-brand/40 bg-brand/10 px-7 py-3.5 text-center font-bold text-brand shadow-lg shadow-brand/10 transition-all duration-300 hover:-translate-y-1 hover:bg-brand hover:text-black hover:shadow-brand/25 sm:w-auto"
           >
-            <Icon name="folder-open" className="h-5 w-5 shrink-0 transition-transform duration-300 group-hover:scale-110" />
+            <Icon
+              name="folder-open"
+              className="h-5 w-5 shrink-0 transition-transform duration-300 group-hover:scale-110"
+            />
             <span>{heading.button}</span>
-            <Icon name="external-link" className="h-4 w-4 shrink-0 opacity-70" />
+            <Icon
+              name="external-link"
+              className="h-4 w-4 shrink-0 opacity-70"
+            />
           </a>
         </div>
       )}
