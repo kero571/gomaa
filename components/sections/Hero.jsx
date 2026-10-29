@@ -1,7 +1,9 @@
 import Image from "next/image";
 import Icon from "../ui/Icon";
 
-export default function Hero() {
+export default function Hero({ hero }) {
+  const photo = hero.image || "/profile-Photoroom.png";
+
   return (
     <section
       id="top"
@@ -10,7 +12,7 @@ export default function Hero() {
       {/* Mobile Background Image */}
       <div className="pointer-events-none absolute inset-0 md:hidden">
         <Image
-          src="/profile-Photoroom.png"
+          src={photo}
           alt=""
           fill
           priority
@@ -29,19 +31,16 @@ export default function Hero() {
         <div className="mx-auto w-full max-w-2xl md:mx-0 md:min-w-0 md:flex-1">
           <span className="chip animate-fadeUp">
             <span className="h-1.5 w-1.5 rounded-full bg-brand" />
-            Video Editor | Motion Graphics
+            {hero.badge}
           </span>
 
           <h1 className="mx-auto mt-3 text-[clamp(1.65rem,6vw,2.35rem)] font-black leading-[1.35] animate-fadeUp [animation-delay:.08s] sm:text-4xl md:mx-0 md:mt-5 md:text-4xl lg:text-5xl xl:text-6xl">
-            اصنع فيديوهات تجعل
-            <span className="mt-3 block text-brand sm:mt-4">
-              جمهورك يتوقف عن التمرير
-            </span>
+            {hero.title1}
+            <span className="mt-3 block text-brand sm:mt-4">{hero.title2}</span>
           </h1>
 
           <p className="mx-auto mt-3 max-w-xl text-sm leading-6 text-white/85 animate-fadeUp [animation-delay:.16s] sm:text-base md:mx-0 md:mt-5 md:leading-7">
-            مونتاج احترافي وموشن جرافيك سينمائي لبناء هوية بصرية قوية وزيادة
-            تفاعل حساباتك وصفحاتك.
+            {hero.text}
           </p>
 
           <div className="mt-5 flex w-full flex-col items-stretch justify-center gap-3 sm:w-auto sm:flex-row sm:items-center md:mt-6 md:justify-start">
@@ -50,14 +49,14 @@ export default function Hero() {
               className="btn inline-flex w-full items-center justify-center gap-2 !py-3 backdrop-blur sm:w-auto"
             >
               <Icon name="play" className="h-4 w-4" />
-              شاهد أعمالي
+              {hero.primaryBtn}
             </a>
 
             <a
               href="#contact"
               className="btn inline-flex w-full items-center justify-center gap-2 !py-3 backdrop-blur sm:w-auto"
             >
-              تواصل معي
+              {hero.secondaryBtn}
             </a>
           </div>
         </div>
@@ -65,7 +64,7 @@ export default function Hero() {
         {/* Desktop Portrait */}
         <div className="relative mt-6 hidden aspect-[1065/1600] w-[clamp(18rem,30vw,25rem)] shrink-0 overflow-hidden rounded-3xl border border-brand/20 bg-white/[0.02] md:block">
           <Image
-            src="/profile-Photoroom.png"
+            src={photo}
             alt="جمعه - مونتير فيديو ومصمم موشن جرافيك"
             fill
             priority

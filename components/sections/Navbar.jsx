@@ -2,7 +2,7 @@ import Icon from "../ui/Icon";
 import { NAV } from "@/data/content";
 
 // Pure-CSS mobile menu (checkbox hack) => zero JS, zero INP cost.
-export default function Navbar() {
+export default function Navbar({ brand = "GOMAA" }) {
   return (
     <header className="sticky top-0 z-40 border-b border-brand/10 bg-bg/85 backdrop-blur">
       <div className="container-x relative flex h-14 items-center justify-between">
@@ -36,7 +36,7 @@ export default function Navbar() {
           ))}
         </nav>
         <a href="#top" className="hidden font-extrabold md:block text-brand text-lg">
-          GOMAA
+          {brand}
         </a>
       </div>
     </header>
