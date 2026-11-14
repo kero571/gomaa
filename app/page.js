@@ -8,6 +8,7 @@ import Process from "@/components/sections/Process";
 import Faq from "@/components/sections/Faq";
 import Contact from "@/components/sections/Contact";
 import Footer from "@/components/sections/Footer";
+import Testimonials from "@/components/sections/Testimonials";
 import { SITE } from "@/lib/site";
 import { getContent } from "@/lib/content";
 
@@ -54,6 +55,7 @@ export default async function Home() {
         <Works works={c.works} link={c.worksLink} heading={c.sections.works} />
         <Services services={c.services} heading={c.sections.services} />
         <Process steps={c.steps} heading={c.sections.process} />
+        <Testimonials heading={c.sections.reviews} />
         <Faq faqs={c.faqs} heading={c.sections.faq} />
         <Contact contact={c.contact} />
       </main>

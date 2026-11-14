@@ -1,4 +1,12 @@
-import { SKILLS, STATS, WORKS, SERVICES, STEPS, FAQS, SOCIALS } from "./content";
+import {
+  SKILLS,
+  STATS,
+  WORKS,
+  SERVICES,
+  STEPS,
+  FAQS,
+  SOCIALS,
+} from "./content";
 
 // Used when nothing is saved yet (or Firestore is unreachable).
 export const DEFAULT_CONTENT = {
@@ -11,6 +19,7 @@ export const DEFAULT_CONTENT = {
     primaryBtn: "شاهد أعمالي",
     secondaryBtn: "تواصل معي",
     image: "",
+    floaters: [],
   },
   about: {
     title: "نبذة عني وخبراتي",
@@ -22,12 +31,17 @@ export const DEFAULT_CONTENT = {
   skills: SKILLS,
   stats: STATS,
   works: WORKS,
-  worksLink: "https://drive.google.com/drive/folders/1-AnO8eS0Mnx1lwm4R6Jrb5eT5jBVY0s4",
+  worksLink:
+    "https://drive.google.com/drive/folders/1-AnO8eS0Mnx1lwm4R6Jrb5eT5jBVY0s4",
   services: SERVICES,
   steps: STEPS,
   faqs: FAQS,
   sections: {
-    works: { eyebrow: "معرض النماذج", title: "أحدث الأعمال", button: "شاهد الأعمال كاملة" },
+    works: {
+      eyebrow: "معرض النماذج",
+      title: "أحدث الأعمال",
+      button: "شاهد الأعمال كاملة",
+    },
     services: {
       eyebrow: "ماذا أقدم لك؟",
       title: "خدمات ترتقي بجودة محتواك",
@@ -35,6 +49,12 @@ export const DEFAULT_CONTENT = {
     },
     process: { eyebrow: "رحلة العمل", title: "الخطوات التي نسير عليها" },
     faq: { eyebrow: "إجابات سريعة", title: "الأسئلة الشائعة" },
+    reviews: {
+      eyebrow: "آراء العملاء",
+      title: "ماذا يقول صُنّاع المحتوى؟",
+      formTitle: "شاركنا رأيك",
+      formOpen: true,
+    },
   },
   contact: {
     eyebrow: "خلينا نبدأ مع بعض",

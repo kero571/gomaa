@@ -1,16 +1,41 @@
 import Image from "next/image";
 import Icon from "../ui/Icon";
 
+const num = (v, d) => (Number.isFinite(Number(v)) ? Number(v) : d);
+
+// Small decorative images placed around the photo. Positions are % of the photo box, so they match on mobile and desktop.
+function Floaters({ items }) {
+  return items.map((f, i) => (
+    <span
+      key={f.id || i}
+      aria-hidden="true"
+      className="pointer-events-none absolute"
+      style={{ left: `${num(f.x, 50)}%`, top: `${num(f.y, 50)}%`, width: `${num(f.size, 16)}%`, transform: "translate(-50%, -50%)" }}
+    >
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={f.src}
+        alt=""
+        decoding="async"
+        draggable={false}
+        className={`block h-auto w-full ${f.float ? "floaty" : ""}`}
+        style={f.float ? { animationDelay: `${(i % 4) * 0.6}s` } : undefined}
+      />
+    </span>
+  ));
+}
+
 export default function Hero({ hero }) {
   const photo = hero.image || "/profile-Photoroom.png";
+  const floaters = (hero.floaters || []).filter((f) => typeof f?.src === "string" && /^(https:\/\/|\/)/.test(f.src));
 
   return (
     <section
       id="top"
       className="relative isolate h-[calc(100svh-3.5rem)] overflow-hidden bg-bg"
     >
-      {/* Mobile Background Image */}
-      <div className="pointer-events-none absolute inset-0 md:hidden">
+      {/* Mobile Background Image (same ratio as the photo, so the floating images line up) */}
+      <div className="pointer-events-none absolute inset-x-0 top-0 aspect-[1065/1600] md:hidden">
         <Image
           src={photo}
           alt=""
@@ -20,6 +45,7 @@ export default function Hero({ hero }) {
           sizes="100vw"
           className="object-cover object-top opacity-85"
         />
+        <Floaters items={floaters} />
       </div>
 
       {/* Dark Gradient for Readable Text */}
@@ -62,15 +88,18 @@ export default function Hero({ hero }) {
         </div>
 
         {/* Desktop Portrait */}
-        <div className="relative mt-6 hidden aspect-[1065/1600] w-[clamp(18rem,30vw,25rem)] shrink-0 overflow-hidden rounded-3xl border border-brand/20 bg-white/[0.02] md:block">
-          <Image
-            src={photo}
-            alt="جمعه - مونتير فيديو ومصمم موشن جرافيك"
-            fill
-            priority
-            sizes="(max-width: 1023px) 288px, 30vw"
-            className="object-contain"
-          />
+        <div className="relative mt-6 hidden aspect-[1065/1600] w-[clamp(18rem,30vw,25rem)] shrink-0 md:block">
+          <div className="absolute inset-0 overflow-hidden rounded-3xl border border-brand/20 bg-white/[0.02]">
+            <Image
+              src={photo}
+              alt="جمعه - مونتير فيديو ومصمم موشن جرافيك"
+              fill
+              priority
+              sizes="(max-width: 1023px) 288px, 30vw"
+              className="object-contain"
+            />
+          </div>
+          <Floaters items={floaters} />
         </div>
       </div>
     </section>
