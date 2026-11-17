@@ -15,7 +15,7 @@ export const metadata = {
   metadataBase: new URL(SITE.url),
   title: { default: SITE.title, template: "%s | محمد أحمد" },
   description: SITE.description,
-  keywords: ["مونتاج فيديو", "موشن جرافيك", "مونتير", "ريلز", "شورتس", "تصحيح ألوان", "Video Editor", "Motion Graphics"],
+  keywords: ["مونتاج فيديو", "موشن جرافيك", "مونتير", "ريلز", "شورتس", "تصحيح ألوان", "Video Editor", "Motion Graphics","gomaa editor","عاوز  مونتر  شاطر"],
   authors: [{ name: "محمد أحمد" }],
   creator: "محمد أحمد",
   alternates: { canonical: "/" },
