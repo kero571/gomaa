@@ -3,6 +3,7 @@ export const NAV = [
   { href: "#works", label: "أعمالي" },
   { href: "#services", label: "الخدمات" },
   { href: "#process", label: "خطوات العمل" },
+  { href: "#reviews", label: "آراء العملاء" },
   { href: "#faq", label: "الأسئلة الشائعة" },
 ];
 
